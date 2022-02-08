@@ -252,15 +252,3 @@ testnet-bootstrapper:
 # generic modules use custom python scripts and the bootstrapper image to
 # run python scripts to acoomplish various actions such as mining or 
 # deploying deposits and sending transactions.
-# generic-modules:
-#   geth-miner:
-#   # docker compose
-#     image: "ethereum-testnet-bootstrapper"
-#     tag: "latest"
-#     container-name: "geth-miner"
-#     ip-start: "10.0.20.203"
-#     num-nodes: 1
-#     entrypoint: ["python3", "/source/apps/start-geth-miner.py", "--geth-ipc", "/data/local_testnet/geth/geth.ipc"]
-#     # custom
-#     num-mining-threads: 1
-#     # TODO: when to stop
