@@ -11,6 +11,10 @@ GRPC_PORT=$8
 VALIDATOR_METRICS_PORT=${9}
 GRAFFITI=${10}
 NETRESTRICT_RANGE=${11}
+DEPOSIT_CONTRACT_ADDR=${12}
+DEPOSIT_CONTRACT_BLK=${13}
+# TODO: check if deposit_contract args are empty or not that way we can use
+# the same script for delayed deployment and genesis
 
 while [ ! -f "/data/consensus-clients-ready" ]; do
     sleep 1
@@ -38,6 +42,8 @@ beacon-chain \
   --enable-debug-rpc-endpoints \
   --p2p-allowlist="$NETRESTRICT_RANGE" \
   --enable-debug-rpc-endpoints \
+  --deposit-contract "0x8c594691c0e592ffa21f153a16ae41db5befcaaa" \
+  --contract-deployment-block 0 \
   --min-sync-peers 1 &
 
   # --monitoring-host=0.0.0.0 --monitoring-port="$METRICS_PORT" \
