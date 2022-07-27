@@ -77,6 +77,7 @@ class BeaconAPI(object):
 
     def get_api_response(self, api_request):
         start = int(time.time())
+        response = None
         while time.time() - start < self.timeout:
             response = api_request.get_response(self.base_url)
             if response is not None:
