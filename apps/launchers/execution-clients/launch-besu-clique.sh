@@ -1,20 +1,20 @@
-env_vars=( 
-    "EXECUTION_CHECKPOINT_FILE" 
-    "IP_ADDR" 
-    "EXECUTION_DATA_DIR" 
-    "EXECUTION_HTTP_PORT" 
-    "EXECUTION_WS_PORT" 
-    "EXECUTION_P2P_PORT" 
-    "NETWORK_ID" 
-    "HTTP_APIS" 
-    "WS_APIS" 
-    "END_FORK_NAME" 
-    "BESU_PRIVATE_KEY" 
+env_vars=(
+    "EXECUTION_CHECKPOINT_FILE"
+    "IP_ADDR"
+    "EXECUTION_DATA_DIR"
+    "EXECUTION_HTTP_PORT"
+    "EXECUTION_WS_PORT"
+    "EXECUTION_P2P_PORT"
+    "NETWORK_ID"
+    "HTTP_APIS"
+    "WS_APIS"
+    "END_FORK_NAME"
+    "BESU_PRIVATE_KEY"
     "EXECUTION_LOG_LEVEL"
-    "BESU_GENESIS_FILE" 
+    "BESU_GENESIS_FILE"
 )
 
-# OPTIONAL: 
+# OPTIONAL:
     # TERMINAL_TOTAL_DIFFICULTY
     # EXECUTION_HTTP_ENGINE_PORT
     # EXECUTION_WS_ENGINE_PORT
@@ -52,7 +52,7 @@ done
 #--Xmerge-support=true \
 #--miner-coinbase="{{fee_recipient}}"
 #--sync-mode=FULL \
-besu \
+LOG4J_CONFIGURATION_FILE=/data/besu-logging.xml besu \
   --logging="$EXECUTION_LOG_LEVEL" \
   --bootnodes="$EXECUTION_BOOTNODE" \
   --data-path="$EXECUTION_DATA_DIR" \
@@ -76,4 +76,4 @@ besu \
   --engine-jwt-enabled \
   --engine-jwt-secret="$JWT_SECRET_FILE" \
   --engine-host-allowlist="*" \
-  --engine-rpc-port="$EXECUTION_ENGINE_HTTP_PORT" 
+  --engine-rpc-port="$EXECUTION_ENGINE_HTTP_PORT"
