@@ -7,7 +7,7 @@ WORKDIR /go/src/github.com/ethereum/
 
 ARG GETH_BRANCH="master"
 
-RUN git clone https://github.com/ethereum/go-ethereum \
+RUN git clone https://github.com/lightclient/go-ethereum \
     && cd go-ethereum \
     && git checkout ${GETH_BRANCH} 
 
