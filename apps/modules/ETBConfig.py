@@ -128,7 +128,8 @@ class Module(ModuledConfigEntry):
         super().__init__(parent_module.name, parent_module.module_type, parent_module.etb_config)
         # overwrite the name
         self.name = f"{parent_module.name}-{ndx}"
-        self.ndx = ndx
+        #
+        self.ndx = ndx + 1
         # Modules must define their base docker vars.
         self.docker_entry: DockerEntry = DockerEntry(self)
         # defined_env_var -> DOCKER_ENV_VAR

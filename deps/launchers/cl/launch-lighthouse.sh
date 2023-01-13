@@ -46,6 +46,26 @@ done
 
 echo "Launching lighthouse."
 
+# see https://notes.ethereum.org/@bbusa/Zhejiang
+
+lighthouse \
+  --logfile="$NODE_DIR/beacon.log" \
+  --logfile-debug-level="$LIGHTHOUSE_DEBUG_LEVEL" \
+	--datadir="$NODE_DIR" \
+  --testnet-dir="$TESTNET_DIR" \
+  bn \
+  --eth1 \
+  --http \
+  --http-allow-sync-stalled \
+  --execution-endpoints "http://127.0.0.1:$EXECUTION_ENGINE_HTTP_PORT" \
+  --enr-address "$IP_ADDR" \
+  --enr-udp-port="$CONSENSUS_P2P_PORT" \
+  --enr-tcp-port="$CONSENSUS_P2P_PORT" \
+  --discovery-port="$CONSENSUS_P2P_PORT" \
+  --jwt-secrets="$JWT_SECRET_FILE" \
+  --boot-nodes="enr:-Iq4QJk4WqRkjsX5c2CXtOra6HnxN-BMXnWhmhEQO9Bn9iABTJGdjUOurM7Btj1ouKaFkvTRoju5vz2GPmVON2dffQKGAX53x8JigmlkgnY0gmlwhLKAlv6Jc2VjcDI1NmsxoQK6S-Cii_KmfFdUJL2TANL3ksaKUnNXvTCv1tLwXs0QgIN1ZHCCIyk" \
+  --suggested-fee-recipient=0x00000000219ab540356cbb839cbe05303d7705fa
+
 #lighthouse \
 #  --logfile="$NODE_DIR/beacon.log" \
 #  --logfile-debug-level="$LIGHTHOUSE_DEBUG_LEVEL" \
