@@ -177,13 +177,13 @@ client-modules:
     # docker-compose
     image: "etb-all-clients"
     tag: "latest"
-    container-name: "teku-client-geth"
+    container-name: "lighthouse_3_3_0-geth"
     start-ip-addr: "10.0.20.20"
     depends: "ethereum-testnet-bootstrapper"
     num-nodes: 1
 
     # consensus-info
-    consensus-client: "teku"
+    consensus-client: "lighthouse"
     consensus-config: "base-consensus-client"
     consensus-launcher: "/source/deps/launchers/cl/launch-lighthouse_3_3_0.sh"
     validator-offset-start: 4

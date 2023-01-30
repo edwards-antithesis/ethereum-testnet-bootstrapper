@@ -48,7 +48,7 @@ echo "Launching lighthouse."
 
 # see https://notes.ethereum.org/@bbusa/Zhejiang
 
-/usr/local/bin/lighthouse_3_3_0/lighthouselighthouse \
+/usr/local/bin/lighthouse_3_4_0/lighthouse \
   --logfile="$NODE_DIR/beacon.log" \
   --logfile-debug-level="$LIGHTHOUSE_DEBUG_LEVEL" \
 	--datadir="$NODE_DIR" \
